@@ -10,7 +10,7 @@ if(!isset($_SESSION['sess_user']))
 <!DOCTYPE html>
 <html>
 <head>
-<title>SERVICE PROVIDER AND MANAGER</title>
+<title>HOME SERVICE PROVIDER</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <script src="js/jquery.min.js"></script>

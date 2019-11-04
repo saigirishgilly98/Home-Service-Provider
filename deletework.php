@@ -9,7 +9,7 @@ if(!isset($_SESSION['sess']))
 <!DOCTYPE html>
 <html>
    <head>
-      <title>SERVICE PROVIDER AND MANAGER</title>
+      <title>HOME SERVICE PROVIDER</title>
       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
       <script src="js/jquery.min.js"></script>
       <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -189,6 +189,10 @@ if(!isset($_SESSION['sess']))
               mysqli_stmt_close($query);
               echo "<script>alert('Deleted Successfully');
               window.location.href='adminworkcheck.php';</script>";
+            }
+            else{
+              echo "<script>alert('Failed to Delete');
+       window.location.href='deletework.php';</script>";
             }
            }
            else

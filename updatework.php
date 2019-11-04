@@ -9,7 +9,7 @@ if(!isset($_SESSION['sess_user']))
 <!DOCTYPE html>
 <html>
    <head>
-      <title>SERVICE PROVIDER AND MANAGER</title>
+      <title>HOME SERVICE PROVIDER</title>
       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
       <script src="js/jquery.min.js"></script>
       <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -96,23 +96,31 @@ if(!isset($_SESSION['sess_user']))
       </div>
       <div class="wow fadeInLeft" data-wow-delay="0.4s">
       <span>First Name<label>*</label></span>
-      <input type="text" id="fname" name="fname"> 
+      <input type="text" id="fname" name="fname" pattern="^[a-zA-Z'. -]{1,}$"> 
       </div>
       <div class="wow fadeInLeft" data-wow-delay="0.4s">
       <span>Last Name<label>*</label></span>
-      <input type="text" id="lname" name="lname"> 
+      <input type="text" id="lname" name="lname" pattern="^[a-zA-Z'. -]{1,}$"> 
       </div>
       <div class="wow fadeInRight" data-wow-delay="0.4s">
       <span>Phone Number<label>*</label></span>
-      <input type="text" id="phone" name="phone"> 
-      </div>
-      <div class="wow fadeInRight" data-wow-delay="0.4s">
-      <span>Area<label>*</label></span>
-      <input type="text" id="area" name="area"> 
+      <input type="text" id="phone" name="phone" pattern="[6789][0-9]{9}"> 
       </div>
       <div class="wow fadeInRight" data-wow-delay="0.4s">
       <span>Location<label>*</label></span>
       <input type="text" id="location" readonly> 
+      </div>
+      <div class="wow fadeInRight" data-wow-delay="0.4s">
+      <span>Area<label>*</label></span>
+      <!--input type="text" id="area" name="area"--> 
+      <select name="area">
+        <option value="Himayathnagar">Himayathnagar</option>
+        <option value="Lbnagar">Lbnagar</option>
+        <option value="Uppal">Uppal</option>
+        <option value="Ameerpet">Ameerpet</option>
+        <option value="Kukatpally">Kukatpally</option>
+        <option value="Hitech city">Hitech city</option>
+      </select>
       </div>
       <div class="wow fadeInRight" data-wow-delay="0.4s">
       <span>Authoriser Id<label>*</label></span>

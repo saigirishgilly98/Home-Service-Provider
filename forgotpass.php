@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>SERVICE PROVIDER AND MANAGER</title>
+      <title>HOME SERVICE PROVIDER</title>
       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="js/jquery.min.js"></script>
@@ -43,7 +43,7 @@
                   <a href="index.php"><img src="images/nit.png" class="img-responsive" alt="" /></a>
                </div><br>
                <div>
-                  <a href="index.php"><img src="images/y.png" class="img-responsive" alt="" /></a>
+                  <a href="index.php"><img src="images/home.png" class="img-responsive" alt="" /></a>
                </div>
                <div class="clearfix"></div>
             </div>
@@ -72,7 +72,7 @@
             </div>
          </div>
       </div>
-      <div class="content">
+      <div class="main">
       <div class="container">
          <div class="login-page">
             <div class="account_grid">
@@ -88,17 +88,17 @@
                <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
                   <form action=" " method="post">
                      <div>
-                        <span>Username<label>*</label></span>
-                        <input type="text" name="username"> 
+                        <span>Email<label>*</label></span>
+                        <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"> 
                      </div>
-                     <div>
+                     <!--div>
                         <span>New Password<label>*</label></span>
                         <input type="password" name="pass1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"> 
                      </div>
                      <div>
                         <span>Confirm Password<label>*</label></span>
                         <input type="password" name="pass2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"> 
-                     </div>
+                     </div-->
                      
                      <div class="clearfix"> </div>
                     
@@ -113,7 +113,7 @@
       
 <div class="footer">
    <div class="container">
-      <p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; Designed by &nbsp;<a href="team/index.html">PBP</a></p>
+      <p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; Designed by &nbsp;<a href="team/index.html">SGV</a></p>
    </div>
 </div>
 <!-- footer-section-ends -->
@@ -139,28 +139,36 @@
 include 'dbconn.php';
 if(isset($_POST['sub']))
          {
-           if(!empty($_POST['username']) && !empty($_POST['pass1']) && !empty($_POST['pass2']))
+           if(!empty($_POST['email']))
            {
-            $username=$_POST['username'];
-            $pass1=$_POST['pass1'];
-            $pass2=$_POST['pass2'];
-            if($pass1==$pass2)
-            {
-            $query="UPDATE authoriser set password='".$pass1."' WHERE username='".$username."'";
-             if(mysqli_query($conn,$query))
-             {
-             echo "<script>alert('Changed Successfully');
-             window.location.href='authorizer.php';</script>";
-            }
-            else
-            {
-              echo "<script>alert('Failed to Change');</script>";
-            }
+            $email=$_POST['email'];
+            
+            $query="SELECT * FROM authoriser where email='".$email."'";
+         $result=mysqli_query($conn,$query);
+         $numrows=mysqli_num_rows($result);
+         if($numrows==1)
+         {
+           $row=mysqli_fetch_array($result);
+           $password=$row[7];
+           $recipient = $email;
+       $subject = "Forgot Password";
+       $message = "Your password is ".$password."\r\n";
+       $headers = "From: saigirishgilly98@gmail.com" . "\r\n";
+       mail($recipient,$subject,$message,$headers);
+
+       echo "<script>alert('Mail Sent!!');
+       window.location.href='authorizer.php';</script>";
+         }
+         else
+         { 
+            echo "<script>alert('Not registered!!');
+       window.location.href='forgotpass.php';</script>";
          }
            }
            else
              echo "<script>alert('One or More Details are left empty');</script>";
          }
+         
          
 ?>
 </html>

@@ -8,7 +8,7 @@ if(!isset($_SESSION['sess']))
 <!DOCTYPE html>
 <html>
 <head>
-<title>SERVICE PROVIDER AND MANAGER</title>
+<title>HOME SERVICE PROVIDER</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <script src="js/jquery.min.js"></script>
@@ -87,6 +87,7 @@ if(!isset($_SESSION['sess']))
     </div>
     <div class="clearfix"></div>
   </div>
+  <div class="main">
 	<div class="container" >
 <div class="clearfix"></div>
 <div style="width:100%">
@@ -147,7 +148,7 @@ if(!isset($_SESSION['sess']))
 </div>
 </div>
 </div>
-<div class="clearfix"></div>
+<div class="clearfix"></div></div>
 	
 <script>
 $(document).ready(function(){

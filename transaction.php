@@ -8,7 +8,7 @@ if(!isset($_SESSION['sess_user']))
 <!DOCTYPE html>
 <html>
 <head>
-<title>SERVICE PROVIDER AND MANAGER</title>
+<title>HOME SERVICE PROVIDER</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <script src="js/jquery.min.js"></script>
@@ -110,12 +110,12 @@ if(!isset($_SESSION['sess_user']))
                 </div>
                 <div class="wow fadeInLeft" data-wow-delay="0.4s">
                   <span>Transaction Amount<label>*</label></span>
-                  <input type="text" name="amount" id="amount"> 
+                  <input type="text" name="amount" id="amount" pattern="^\$?[0-9]?((\.[0-9]+)|([0-9]+(\.[0-9]+)?))$"> 
                 </div>
                 
                  <div class="wow fadeInLeft" data-wow-delay="0.4s">
                   <span>Wage<label>*</label></span>
-                  <input type="text" name="wage" id="wage"> 
+                  <input type="text" name="wage" id="wage" pattern="^\$?[0-9]?((\.[0-9]+)|([0-9]+(\.[0-9]+)?))$"> 
                 </div>
                 <div class="wow fadeInLeft" data-wow-delay="0.4s">
                   <span>Date<label>*</label></span>

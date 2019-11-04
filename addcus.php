@@ -44,19 +44,20 @@
         mysqli_stmt_close($query);
         mysqli_stmt_close($query1);
 
-       $to = $email;
+       $recipient = $email;
        $subject = "Service Booking";
-       $txt = "Your booking is currently under process.You will receive an email with the details of worker once the worker is assigned.Kindly contact him for the further progress.Thank you for using our application";
-       $headers = "From: lokeshmanideep14@gmail.com" . "\r\n";
-       mail($to,$subject,$txt,$headers);
+       $message = "Your booking is currently under process.You will receive an email with the details of worker once the worker is assigned.Kindly contact him for the further progress.Thank you for using our application";
+       $headers = "From: saigirishgilly98@gmail.com" . "\r\n";
+       mail($recipient,$subject,$message,$headers);
 
-       echo "<script>alert('Booked successfully');
+       echo "<script>alert('Booked successfully!! You will receive an email with further details.');
        window.location.href='index.php';</script>";
        
    	} 
    
    	else {
-       echo "<script>alert('Booking Failed');
+      
+       echo "<script>alert('The requested service is not yet available at the requested location');
        window.location.href='customer.php';</script>"; 
    	}
 

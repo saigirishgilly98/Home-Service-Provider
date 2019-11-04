@@ -22,7 +22,7 @@ if(isset($_POST['sub']))
 			$workerd="Worker Name : ".$result[1]." ".$result[2]. "\r\n";
 			$workerd=$workerd."Phone Number : ".$result[3]."\r\n";
 			$workerd=$workerd."Email : ".$result[9]."\r\n";
-			$headers = "From: lokeshmanideep14@gmail.com" . "\r\n";
+			$headers = "From: saigirishgilly98@gmail.com" . "\r\n";
 
 			$txt=$customerd."Worker Details:"."\n\n".$workerd;
 

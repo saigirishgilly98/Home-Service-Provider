@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>SERVICE PROVIDER AND MANAGER</title>
+      <title>HOME SERVICE PROVIDER</title>
       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="js/jquery.min.js"></script>
       <!-- Custom Theme files -->
-      <link href="css/style3.css" rel="stylesheet" type="text/css" media="all" />
+      <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
       <!-- Custom Theme files -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -34,7 +34,7 @@
       </script>
       
    </head>
-   <body style='background-color: black;'>
+   <body>
      <div class="header">
          <div class="container">
             <div class="top-header">
@@ -51,18 +51,18 @@
             <div class="container">
                <div class="top-menu">
                   <ul>
-                     <li class='inactive'><a href="index.php">HOME</a></li>
+                     <li><a href="index.php">Home</a></li>
                      |
-                     <li class='inactive'><a href="customer.php">CUSTOMER</a></li>
+                     <li><a href="customer.php">CUSTOMER</a></li>
                      |
                      <div class="clearfix"></div>
                   </ul>
                </div>
                <div class="login-section">
                   <ul>
-                     <li class='inactive'><a href="authorizer.php"><b>AUTHORIZER LOGIN</a>  </li>
+                     <li><a href="authorizer.php">Authorizer Login</a>  </li>
                      |
-                     <li class="active"><a  href="admin.php"><b>ADMIN LOGIN</b></a> </li>
+                     <li><a class="active" href="admin.php">Admin Login</a> </li>
                      |
                      <div class="clearfix"></div>
                   </ul>
@@ -72,7 +72,6 @@
          </div>
       </div>
       <div class="main">
-      <div class="content">
       <div class="container">
          <div class="login-page">
             <div class="account_grid">
@@ -94,7 +93,7 @@
                         <span>Password<label>*</label></span>
                         <input type="password" name="pass"> 
                      </div>
-                     <a class="forgot" href="forgotpassadmin.php">Forgot Your Password?</a>
+                     <!--a class="forgot" href="forgotpassadmin.php">Forgot Your Password?</a-->
                      <div class="clearfix"> </div>
                      <input type="submit" value="Login">
                   </form>
@@ -106,7 +105,7 @@
 
 <div class="footer">
    <div class="container">
-      <p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; Designed by &nbsp;<a href="team/index.html">SPM</a></p>
+      <p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; Designed by &nbsp;<a href="team/index.html">SGV</a></p>
    </div>
 </div>
 <!-- footer-section-ends -->
@@ -119,7 +118,7 @@
 </script>
 <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
-</div>
+
    </body>
 </html>
 

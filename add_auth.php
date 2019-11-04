@@ -9,7 +9,7 @@ if(!isset($_SESSION['sess']))
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SERVICE PROVIDER AND MANAGER
+    <title>HOME SERVICE PROVIDER
     </title>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <script src="js/jquery.min.js">
@@ -135,35 +135,44 @@ if(!isset($_SESSION['sess']))
                     <label>*
                     </label>
                   </span>
-                  <input type="text" name="firstname"> 
+                  <input type="text" name="firstname" pattern="^[a-zA-Z'. -]+$"> 
                 </div>
                 <div class="wow fadeInLeft" data-wow-delay="0.4s">
                   <span>Last Name
                     <label>*
                     </label>
                   </span>
-                  <input type="text" name="lastname"> 
+                  <input type="text" name="lastname" pattern="^[a-zA-Z'. -]+$"> 
                 </div>
                 <div class="wow fadeInRight" data-wow-delay="0.4s">
                   <span>Username
                     <label>*
                     </label>
                   </span>
-                  <input type="text" name="user"> 
+                  <input type="text" name="user" pattern="^[a-z0-9_-]{3,15}$"> 
+                </div>
+                <div class="wow fadeInRight" data-wow-delay="0.4s">
+                  <span>Email
+                    <label>*
+                    </label>
+                  </span>
+                  <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"> 
                 </div>
                 <div class="wow fadeInRight" data-wow-delay="0.4s">
                   <span>Password
                     <label>*
                     </label>
                   </span>
-                  <input type="text" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"> 
+                  <input type="password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"> 
                 </div>
                 <div class="wow fadeInRight" data-wow-delay="0.4s">
                   <span>Location
                     <label>*
                     </label>
                   </span>
-                  <input type="text" name="location"> 
+                  <select name="location">
+                           <option value="Hyderabad">Hyderabad</option> 
+                        </select> 
                 </div>
                 <div class="wow fadeInRight" data-wow-delay="0.4s">
                   <span>Phone number

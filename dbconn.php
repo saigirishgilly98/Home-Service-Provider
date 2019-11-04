@@ -4,7 +4,7 @@
    $servername = "localhost";
    $username = "root";
    $password = "";
-   $db = "noname";
+   $db = "home_service_provider";
    
    // Create connection
    $conn = new mysqli($servername, $username, $password,$db);

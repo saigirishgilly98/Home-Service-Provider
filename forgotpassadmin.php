@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>SERVICE PROVIDER AND MANAGER</title>
+      <title>HOME SERVICE PROVIDER</title>
       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="js/jquery.min.js"></script>
@@ -42,7 +42,7 @@
                   <a href="index.php"><img src="images/nit.png" class="img-responsive" alt="" /></a>
                </div><br>
                <div>
-                  <a href="index.php"><img src="images/y.png" class="img-responsive" alt="" /></a>
+                  <a href="index.php"><img src="images/home.png" class="img-responsive" alt="" /></a>
                </div>
                <div class="clearfix"></div>
             </div>
@@ -71,6 +71,7 @@
             </div>
          </div>
       </div>
+      <div class="main">
       <div class="content">
       <div class="container">
          <div class="login-page">
@@ -104,11 +105,12 @@
                <div class="clearfix"> </div>
             </div>
          </div>
+         </div>
       </div>
 
 <div class="footer">
    <div class="container">
-      <p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; Designed by &nbsp;<a href="team/index.html">PBP</a></p>
+      <p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; Designed by &nbsp;<a href="team/index.html">SGV</a></p>
    </div>
 </div>
 <!-- footer-section-ends -->

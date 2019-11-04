@@ -8,7 +8,7 @@ if(!isset($_SESSION['sess']))
 <!DOCTYPE html>
 <html>
    <head>
-      <title>SERVICE PROVIDER AND MANAGER</title>
+      <title>HOME SERVICE PROVIDER</title>
       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
       <script src="js/jquery.min.js"></script>
       <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -96,11 +96,11 @@ if(!isset($_SESSION['sess']))
                      </div>
                      <div class="wow fadeInLeft" data-wow-delay="0.4s">
                         <span>First Name<label>*</label></span>
-                        <input type="text" name="firstname"> 
+                        <input type="text" name="firstname" pattern="^[a-zA-Z'. -]{1,}$"> 
                      </div>
                      <div class="wow fadeInLeft" data-wow-delay="0.4s">
                         <span>Last Name<label>*</label></span>
-                        <input type="text" name="lastname"> 
+                        <input type="text" name="lastname" pattern="^[a-zA-Z'. -]{1,}$"> 
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <span>Phone Number<label>*</label></span>
@@ -108,11 +108,20 @@ if(!isset($_SESSION['sess']))
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <span>Area<label>*</label></span>
-                        <input type="text" name="locality"> 
+                        <select name="locality">
+                           <option value="Himayathnagar">Himayathnagar</option>
+                           <option value="Lbnagar">Lbnagar</option>
+                           <option value="Uppal">Uppal</option>
+                           <option value="Ameerpet">Ameerpet</option>
+                           <option value="Kukatpally">Kukatpally</option>
+                           <option value="Hitech city">Hitech city</option>
+                        </select>
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <span>City<label>*</label></span>
-                        <input type="text" name="city"> 
+                        <select name="city">
+                           <option value="Hyderabad">Hyderabad</option> 
+                        </select>
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <span>Email<label>*</label></span>

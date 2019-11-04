@@ -39,6 +39,19 @@
    	$query=mysqli_prepare($conn,"INSERT INTO worker (id,firstname,lastname,phone,profession,authid,area,location,adminuser,email) VALUES (?,?,?,?,?,?,?,?,?,?)");
       mysqli_stmt_bind_param($query,'ssssssssss',$id,$fname,$lname,$phone,$request,$authid,$area,$location,$adminuser,$email);
    	if (mysqli_stmt_execute($query)) {
+
+      $recipient = $email;
+       $subject = "Worker Added";
+       $workerd="Worker Added Successfully\r\n";
+       $workerd=$workerd."Worker Name : ".$fname." ".$lname. "\r\n";
+      $workerd=$workerd."Phone Number : ".$phone."\r\n";
+      $workerd=$workerd."Email : ".$email."\r\n";
+      $workerd=$workerd."Area : ".$area."\r\n";
+      $workerd=$workerd."Location : ".$location."\r\n";
+      $workerd=$workerd."Work : ".$request."\r\n";
+       $headers = "From: saigirishgilly98@gmail.com" . "\r\n";
+       mail($recipient,$subject,$workerd,$headers);
+
        echo "<script>alert('Added Successfully');
        window.location.href='adminworkcheck.php';</script>";
    	} 

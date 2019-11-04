@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>SERVICE PROVIDER AND MANAGER</title>
+      <title>HOME SERVICE PROVIDER</title>
       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
       <script src="js/jquery.min.js"></script>
       <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -81,11 +81,11 @@
                      </div>
                      <div class="wow fadeInLeft" data-wow-delay="0.4s">
                         <span>First Name<label>*</label></span>
-                        <input type="text" id="fname" name="fname"> 
+                        <input type="text" id="fname" name="fname" pattern="^[a-zA-Z'. -]+$"> 
                      </div>
                      <div class="wow fadeInLeft" data-wow-delay="0.4s">
                         <span>Last Name<label>*</label></span>
-                        <input type="text" id="lname" name="lname"> 
+                        <input type="text" id="lname" name="lname" pattern="^[a-zA-Z'. -]+$"> 
                      </div>
                      <div class="wow fadeInLeft" data-wow-delay="0.4s">
                         <span>Service<label>*</label></span>
@@ -93,7 +93,7 @@
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <span>Username<label>*</label></span>
-                        <input type="text" id="user" name="user"> 
+                        <input type="text" id="user" name="user" pattern="^[a-z0-9_-]{3,15}$" readonly> 
                      </div>
                      
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
@@ -102,15 +102,15 @@
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <span>Phone number<label>*</label></span>
-                        <input type="text" id="phone" name="phone"> 
+                        <input type="text" id="phone" name="phone" pattern="[6789][0-9]{9}"> 
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <span>Password<label>*</label></span>
-                        <input type="password" id="pass" name="pass" style="border: 1px solid #EEE;
-  outline-color:#FF5B36;
-  width: 96%;
-  font-size: 1em;
-  padding: 0.5em;"> 
+                        <input type="password" id="pass" name="pass" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" style="border: 1px solid #EEE;
+                        outline-color:#FF5B36;
+                        width: 96%;
+                        font-size: 1em;
+                        padding: 0.5em;"> 
                      </div>
                   </div>
                   <div class="clearfix"> </div>
@@ -148,12 +148,22 @@
          {
            if(!empty($_POST['Id']))
            {
+
+             $errors = array(); 
              $id=$_POST['Id'];
              $fname=$_POST['fname'];
              $lname=$_POST['lname'];
              $phone=$_POST['phone'];
              $user=$_POST['user'];
              $pass=$_POST['pass'];
+
+             if (empty($fname)) { array_push($errors, "Firstname is required"); }
+             if (empty($lname)) { array_push($errors, "Lastname is required"); }
+             if (empty($phone)) { array_push($errors, "Phone Number is required"); }
+             if (empty($user)) { array_push($errors, "Username is required"); }
+             if (empty($pass)) { array_push($errors, "Password is required"); }
+
+            if (count($errors) == 0) { 
             $query=mysqli_prepare($conn,"UPDATE authoriser set firstname=?,lastname=?,phone=?,username=?,password=? where id=?");
             mysqli_stmt_bind_param($query,'ssssss',$fname,$lname,$phone,$user,$pass,$id);
             
@@ -164,7 +174,13 @@
              else
              echo "<script>alert('Failed to Update')</script>";
            }
+           else
+           {
+              echo "<script>alert('One or More Details are left empty');
+              window.location.href='authupdate.php';</script>"; 
+           }
          }
+       }
          
          ?>
       <script type="text/javascript">

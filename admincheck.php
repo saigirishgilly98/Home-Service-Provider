@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>SERVICE PROVIDER AND MANAGER</title>
+      <title>HOME SERVICE PROVIDER</title>
       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
       <script src="js/jquery.min.js"></script>
       <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -134,7 +134,7 @@
       
 <div class="footer">
    <div class="container">
-      <p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; Designed by &nbsp;<a href="team/index.html">PBP</a></p>
+      <p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; Designed by &nbsp;<a href="team/index.html">SGV</a></p>
    </div>
 </div>
 <!-- footer-section-ends -->

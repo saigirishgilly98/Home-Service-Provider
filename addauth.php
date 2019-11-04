@@ -8,6 +8,7 @@
    		// receive all input values from the form
    		$username = mysqli_real_escape_string($conn,$_POST['user']);
    		$password = mysqli_real_escape_string($conn,$_POST['pass']);
+      $email = mysqli_real_escape_string($conn,$_POST['email']);
    		$fname = mysqli_real_escape_string($conn,$_POST['firstname']);
    		$lname = mysqli_real_escape_string($conn,$_POST['lastname']);
    		$phone = mysqli_real_escape_string($conn,$_POST['phone']);
@@ -23,11 +24,12 @@
    		if (empty($phone)) { array_push($errors, "Phone Number is required"); }
    		if (empty($request)) { array_push($errors, "Service is required"); }
    		if (empty($location)) { array_push($errors, "Location is required"); }
+      if (empty($email)) { array_push($errors, "Email is required"); }
    	$adminuser=$_SESSION['sess'];
    
    	if (count($errors) == 0) {
-   $query=mysqli_prepare($conn,"INSERT INTO authoriser (id,firstname,lastname,request,phone,location,username,password,adminuser) VALUES (?,?,?,?,?,?,?,?,?)");
-    mysqli_stmt_bind_param($query,'sssssssss',$id,$fname,$lname,$request,$phone,$location,$username,$password,$adminuser);
+   $query=mysqli_prepare($conn,"INSERT INTO authoriser (id,firstname,lastname,request,phone,location,username,password,adminuser,email) VALUES (?,?,?,?,?,?,?,?,?,?)");
+    mysqli_stmt_bind_param($query,'ssssssssss',$id,$fname,$lname,$request,$phone,$location,$username,$password,$adminuser,$email);
    	if (mysqli_stmt_execute($query)) {
          mysqli_stmt_close($query);
    		echo "<script>alert('Added Successfully');
@@ -38,6 +40,10 @@
        window.location.href='add_auth.php';</script>";
    	}
    }
+   else {
+       echo "<script>alert('One or More Details are left empty');
+       window.location.href='add_auth.php';</script>"; 
+    }
    }
    mysqli_close($conn);
    ?>

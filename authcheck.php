@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>SERVICE PROVIDER AND MANAGER</title>
+      <title>HOME SERVICE PROVIDER</title>
       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
       <script src="js/jquery.min.js"></script>
       <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -71,6 +71,7 @@
          </div>
          <div class="clearfix"></div>
       </div>
+      <div class="main">
       <div class="container">
          <div class="clearfix"></div>
          <div class="wow fadeInDownBig" data-wow-delay="0.4s">
@@ -116,8 +117,8 @@
                ?>
          </table></div>
       </div>
-      <div class="clearfix"></div>
-      
+
+      <div class="clearfix"></div></div>
 
    </body>
 </html>

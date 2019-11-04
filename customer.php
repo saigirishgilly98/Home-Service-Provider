@@ -7,10 +7,10 @@
 
 </style>
    <head>
-      <title>SERVICE PROVIDER AND MANAGER</title>
+      <title>HOME SERVICE PROVIDER</title>
       <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
       <script src="js/jquery.min.js"></script>
-      <link href="css/style3.css" rel="stylesheet" type="text/css" media="all" />
+      <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
       <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
@@ -32,7 +32,7 @@
       </script>
       	
    </head>
-   <body style='background-color: black;'>
+   <body>
       <div class="header">
          <div class="container">
             <div class="top-header">
@@ -51,18 +51,18 @@
             <div class="container">
                <div class="top-menu">
                   <ul>
-                     <li class="inactive"><a  href="index.php">Home</a></li>
+                     <li><a  href="index.php">Home</a></li>
                      |
-                     <li class="active"><a  href="customer.php">Customer</a></li>
+                     <li><a class="active" href="customer.php">Customer</a></li>
                      |
                      <div class="clearfix"></div>
                   </ul>
                </div>
                <div class="login-section">
                   <ul>
-                     <li class="inactive"><a href="authorizer.php"><b>AUTHORIZER LOGIN</a>  </li>
+                     <li><a href="authorizer.php">Authorizer Login</a>  </li>
                      |
-                     <li class="inactive"><a  href="admin.php"><b>ADMIN LOGIN</a> </li>
+                     <li><a  href="admin.php">Admin Login</a> </li>
                      |
                      <div class="clearfix"></div>
                   </ul>
@@ -83,23 +83,34 @@
                      </div>
                      <div class="wow fadeInLeft" data-wow-delay="0.4s">
                         <span>First Name<label>*</label></span>
-                        <input type="text" name="firstname"> 
+                        <input type="text" name="firstname" pattern="^[a-zA-Z'. -]+$"> 
                      </div>
                      <div class="wow fadeInLeft" data-wow-delay="0.4s">
                         <span>Last Name<label>*</label></span>
-                        <input type="text" name="lastname"> 
+                        <input type="text" name="lastname" pattern="^[a-zA-Z'. -]+$"> 
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <span>Email Address<label>*</label></span>
                         <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"> 
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
-                        <span>Locality/Area<label>*</label></span>
-                        <input type="text" name="locality"> 
+                        <span>City<label>*</label></span>
+                        <!---input type="text" name="city" pattern="^[a-zA-Z'. -]+$"--->
+                        <select name="city">
+                           <option value="Hyderabad">Hyderabad</option> 
+                        </select>
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
-                        <span>City<label>*</label></span>
-                        <input type="text" name="city"> 
+                        <span>Locality/Area<label>*</label></span>
+                        <!--input type="text" name="locality" pattern="^[a-zA-Z'. -]+$"--> 
+                        <select name="locality">
+                           <option value="Himayathnagar">Himayathnagar</option>
+                           <option value="Lbnagar">Lbnagar</option>
+                           <option value="Uppal">Uppal</option>
+                           <option value="Ameerpet">Ameerpet</option>
+                           <option value="Kukatpally">Kukatpally</option>
+                           <option value="Hitech city">Hitech city</option>
+                        </select>
                      </div>
                      <div class="wow fadeInRight" data-wow-delay="0.4s">
                         <span>Phone number<label>*</label></span>
@@ -152,7 +163,7 @@
 
 <div class="footer">
    <div class="container">
-      <p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; Designed by &nbsp;<a href="team/index.html">SPM</a></p>
+      <p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; Designed by &nbsp;<a href="team/index.html">SGV</a></p>
    </div>
 </div>
 <!-- footer-section-ends -->
